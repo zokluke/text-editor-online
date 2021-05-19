@@ -3,13 +3,11 @@
 <script>
   var today = new Date();
   var expiry = new Date(today.getTime() + 365 * 24 * 3600 * 1000);
-  function setCookie(name, value)
-  {
+  function setCookie(name, value) {
     document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
   }
-  function xd()
-  {
-    setCookie("text",document.getElementById("xd").innerText
+  function xd() {
+    setCookie("text",document.getElementById("xd").innerText)
   }
 </script>
   <button onclick="xd()">Click me</button>
