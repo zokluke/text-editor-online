@@ -9,7 +9,20 @@
   function xd() {
     setCookie("text",document.getElementById("xd").innerText)
   }
+  function getCookie(name) {
+  var name = name + "=";
+  var cookie = decodeURIComponent(document.cookie);
+  var cookie = cookie.split(';');
+  for(var i = 0; i <cookie.length; i++) {
+    var cookie = cookie[i];
+    while (cookie.charAt(0) == ' ') { cookie = cookie.substring(1); }
+    if (cookie.indexOf(name) == 0) { return cookie.substring(name.length, cookie.length); }
+    }
+    return "";
+  }
 </script>
   
 </body>
-<button onclick="xd()">Click me</button>
+
+<button onclick="xd()">Save</button>
+<button onclick="document.getElementById("xd").innerText=getCookie("text");">Load</button>
